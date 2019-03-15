@@ -1,0 +1,86 @@
+.eats-header-wrapper {
+  background-color: $blue;
+  position: relative;
+  height: 106px;
+}
+
+.eats-header-name {
+  display: none;
+
+  @media (min-width: $mid-bp) {
+    display: inline;
+    padding-left: 20px;
+    font-weight: 600;
+  }
+}
+
+.eats-header-logo {
+  background-color: $light-blue;
+  display: flex;
+  height: 53px;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $mid-bp) {
+    display: block;
+  }
+}
+
+.eats-header-link {
+  color: $white;
+  padding: 0 10px;
+  text-decoration: none;
+
+  @media (min-width: $mid-bp) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+    height: 100%;
+  }
+
+  &:hover {
+    color: $yellow;
+  }
+
+  .eats-icon-logo {
+    font-size: 30px;
+
+    &::before {
+      margin: 0;
+      width: auto;
+    }
+  }
+}
+
+.eats-icon-menu {
+  color: $white;
+  font-size: 22px;
+  position: absolute;
+  cursor: pointer;
+  left: 10px;
+  transform: translateY(50%);
+}
+
+.eats-icon-menu {
+  display: block;
+
+  @media (min-width: $mid-bp) {
+    display: none;
+  }
+}
+
+.eats-icon-menu--hide {
+  display: none;
+}
+.eats-icon-menu-close {
+  display: none;
+}
+
+.eats-icon-menu-close--active {
+  display: block;
+
+  @media (min-width: $mid-bp) {
+    display: none;
+  }
+}
