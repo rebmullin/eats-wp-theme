@@ -1,19 +1,19 @@
 <?php
 /**
  * The template for displaying the home/index page.
- * This template will also be called in any case where the Wordpress engine 
+ * This template will also be called in any case where the Wordpress engine
  * doesn't know which template to use (e.g. 404 error)
  */
 
 get_header(); // This fxn gets the header.php file and renders it ?>
 	<div id="content" class="eats-wrapper" role="main">
 
-			<?php if ( have_posts() ) : 
+			<?php if ( have_posts() ) :
 			// Do we have any posts in the databse that match our query?
-			// In the case of the home page, this will call for the most recent posts 
+			// In the case of the home page, this will call for the most recent posts
 			?>
 
-				<?php while ( have_posts() ) : the_post(); 
+				<?php while ( have_posts() ) : the_post();
           // If we have some posts to show, start a loop that will display each one the same way
           ?>
 
@@ -24,11 +24,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
             <img
                 class="eats-post-image"
                 src="<?php echo get_field('image') ?>"
-                alt="some title"
+                alt="<?php the_title()?>"
               />
 
           <?php endif; ?>
-            
+
           <div class="eats-post-content">
 
             <time class="eats-post-date" datetime=<?php the_time('F d,Y') ?>}>
@@ -49,11 +49,11 @@ get_header(); // This fxn gets the header.php file and renders it ?>
               <?php wp_link_pages(); // This will display pagination links, if applicable to the post ?>
             </div>
           </div><!-- the-content -->
-              
+
         </article>
 
 			<?php endwhile; // OK, let's stop the posts loop once we've exhausted our query/number of posts ?>
-				
+
 			<!-- pagintation -->
 			<div id="pagination" class="eats-posts-pagination clearfix">
 				<div class="past-page"><?php previous_posts_link( 'newer' ); // Display a link to  newer posts, if there are any, with the text 'newer' ?></div>
@@ -62,7 +62,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 
 
 			<?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>
-				
+
 				<article class="eats-post post error">
 					<h1 class="404">Nothing has been posted like that yet</h1>
 				</article>

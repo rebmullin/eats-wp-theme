@@ -15,8 +15,8 @@ gulp.task("script", function() {
     .src("src/js/*.js")
     .pipe(
       babel({
-        presets: ["@babel/react"],
-      }),
+        presets: ["@babel/react"]
+      })
     )
     .pipe(gulp.dest("dist/js"));
 });
@@ -26,19 +26,4 @@ gulp.task("watch", function() {
   gulp.watch("src/js/*.js", gulp.series(["script"]));
 });
 
-// gulp.task("build", [`clean`, `sass`, `useref`, `images`, `fonts`], function() {
-//   console.log("Building files");
-// });
-
 gulp.task("build", gulp.series("sass", "script"));
-
-// gulp.task("build", ["sass", "script"], function(cb) {
-//   //console.log("Building files");
-//   cb();
-// });
-
-// gulp.task("build", function(cb) {
-//   gulp.series(["sass", "script"]);
-//   // gulp.series(["jsx"]);
-//   cb();
-// });

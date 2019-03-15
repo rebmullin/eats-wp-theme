@@ -11,7 +11,7 @@
 }
 
 .eats-post-date {
-  padding: 20px 0 5px;
+  padding: 10px 0 5px;
   color: $gray;
   display: block;
 }
@@ -43,6 +43,16 @@
 .eats-post-content {
   color: $gray;
   line-height: 1.4;
+
+  img.alignleft {
+    float: left;
+    margin-right: 20px;
+  }
+
+  img.alignright {
+    float: right;
+    margin-left: 20px;
+  }
 }
 
 .eats-post-read-more {
